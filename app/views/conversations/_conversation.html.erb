@@ -1,0 +1,12 @@
+<div>
+	<h1 align="center">
+		Chatting with <%= online_status conversation.with(current_user) %>
+	</h1>
+  <br>
+  <em><%= conversation.personal_messages.last.body.truncate(50) %></em>
+  <br>
+  <h2 align="center">
+  	<%= link_to 'View conversation', conversation_path(conversation) %>
+	</h2>
+  <hr>
+</div>

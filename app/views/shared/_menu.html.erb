@@ -1,0 +1,29 @@
+<% flash.each do |key, value| %>
+  <div>
+    <%= value %>
+  </div>
+<% end %>
+<table border="2px" align="center" bgcolor="#FFDAB9">
+  <tr>
+    <td>
+<div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as<div id="current-user"></div> <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  <% end %>
+</div>
+<ul>
+</td>
+</tr>
+</table><br><br>
+<table border="2px" align="center" width="10%" bgcolor="#FFDAB9">
+  <tr>
+    <td>
+      <%= link_to 'Home', root_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to 'Users', users_path %>
+    </td>
+  </tr>
+</table>
+</ul>
